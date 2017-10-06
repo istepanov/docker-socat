@@ -1,9 +1,7 @@
-FROM debian:jessie
+FROM alpine:latest
 MAINTAINER Ilya Stepanov <dev@ilyastepanov.com>
 
-RUN apt-get update && \
-    apt-get install -y socat && \
-    rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache socat
 
 ENTRYPOINT ["socat"]
 CMD [""]
